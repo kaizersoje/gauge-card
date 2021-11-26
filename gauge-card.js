@@ -1,5 +1,5 @@
 console.info(
-    '%c GAUGE-CARD %c 0.2.4 ',
+    '%c GAUGE-CARD %c 0.2.5 ',
     'color: cyan; background: black; font-weight: bold;',
     'color: darkblue; background: white; font-weight: bold;',
 );
@@ -79,7 +79,7 @@ class GaugeCard extends HTMLElement {
         transform-origin: center top;
         transition: all 1.3s ease-in-out;
       }
-      .gauge-data,#gauge-data-val{
+      .gauge-data{
         z-index: 4;
         color: var(--primary-text-color);
         line-height: calc(var(--base-unit) * 0.3);
@@ -90,6 +90,9 @@ class GaugeCard extends HTMLElement {
         margin-left: auto;
         margin-right: auto;
         transition: all 1s ease-out;
+      }
+      #gauge-data-val{
+        width: calc(var(--base-unit) * 4);
       }
       .gauge-data #val{
         font-size: calc(var(--base-unit) * 0.55);
