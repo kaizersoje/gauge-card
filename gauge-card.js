@@ -4,6 +4,9 @@ console.info(
     'color: darkblue; background: white; font-weight: bold;',
 );
 
+import "../../../components/ha-card";
+import "../../../components/ha-gauge";
+
 class GaugeCard extends HTMLElement {
   constructor() {
     super();
@@ -29,6 +32,35 @@ class GaugeCard extends HTMLElement {
 
     const card = document.createElement('ha-card');
     const content = document.createElement('div');
+    
+    // Added //
+    const ha_gauge = document.createElement('ha-gauge');
+    var min = document.createAttribute(".min");
+    var max = document.createAttribute(".max");
+    //var val = document.createAttribute(".value");
+    //var locale = document.createAttribute(".locale");
+    //var label = document.createAttribute(".label");
+    var needle = document.createAttribute(".needle");
+    var gauge_style = document.createAttribute("style");
+    var levels = document.createAttribute(".levels");
+      
+    min.value = cardConfig.min;
+    max.value = cardConfig.max;
+    needle.value = cardConfig.needle;
+    gauge_style.value = ${styleMap({"--gauge-color": this._computeSeverity(entityState),})}
+      
+    /*min.value = cardConfig.min;
+    max.value = cardConfig.max;
+    min.value = cardConfig.min;
+    min.value = cardConfig.min;*/
+      
+    ha_gauge.setAttributeNode(min);
+    ha_gauge.setAttributeNode(max);
+    ha_gauge.setAttributeNode(needle);
+    ha_gauge.setAttributeNode(gauge_style);
+
+    // Added //
+      
     const style = document.createElement('style');
     style.textContent = `
       ha-card {
@@ -107,7 +139,8 @@ class GaugeCard extends HTMLElement {
         <div class="gauge-data"><div id="percent"></div><div id="title"></div></div>
       </div>
     `;
-    card.appendChild(content);
+    //card.appendChild(content);
+    card.appendChild(ha_gauge);
     card.appendChild(style);
     card.addEventListener('click', event => {
       this._fire('hass-more-info', { entityId: cardConfig.entity });
