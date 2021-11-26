@@ -1,5 +1,5 @@
 console.info(
-    '%c GAUGE-CARD %c 0.2.5 ',
+    '%c GAUGE-CARD %c 0.2.4 ',
     'color: cyan; background: black; font-weight: bold;',
     'color: darkblue; background: white; font-weight: bold;',
 );
