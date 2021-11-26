@@ -139,8 +139,8 @@ class GaugeCard extends HTMLElement {
         <div class="gauge-data"><div id="percent"></div><div id="title"></div></div>
       </div>
     `;
-    //card.appendChild(content);
-    card.appendChild(ha_gauge);
+    card.appendChild(content);
+    //card.appendChild(ha_gauge);
     card.appendChild(style);
     card.addEventListener('click', event => {
       this._fire('hass-more-info', { entityId: cardConfig.entity });
