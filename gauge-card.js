@@ -1,3 +1,9 @@
+console.info(
+    '%c GAUGE-CARD %c 0.1 ',
+    'color: cyan; background: black; font-weight: bold;',
+    'color: darkblue; background: white; font-weight: bold;',
+);
+
 class GaugeCard extends HTMLElement {
   constructor() {
     super();
