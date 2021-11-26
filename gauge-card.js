@@ -93,9 +93,13 @@ class GaugeCard extends HTMLElement {
       }
       .gauge-data #val{
         font-size: calc(var(--base-unit) * 0.55);
+        width: 50%;
+        float: left;
       }
       .gauge-data #unit{
         font-size: calc(var(--base-unit) * 0.40);
+        width: 50%;
+        float: left;
       }
       .gauge-data #title{
         padding-top: calc(var(--base-unit) * 0.15);
@@ -107,7 +111,7 @@ class GaugeCard extends HTMLElement {
         <div class="gauge-a"></div>
         <div class="gauge-b"></div>
         <div class="gauge-c" id="gauge"></div>
-        <div class="gauge-data"><div id="val"></div><div id="unit"></div><div id="title"></div></div>
+        <div class="gauge-data"><div><div id="val"></div><div id="unit"></div></div><div id="title"></div></div>
       </div>
     `;
     card.appendChild(content);
