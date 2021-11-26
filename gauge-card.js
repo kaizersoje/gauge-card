@@ -4,8 +4,8 @@ console.info(
     'color: darkblue; background: white; font-weight: bold;',
 );
 
-import "../../../components/ha-card";
-import "../../../components/ha-gauge";
+//import "../../../components/ha-card";
+//import "../../../components/ha-gauge";
 
 class GaugeCard extends HTMLElement {
   constructor() {
