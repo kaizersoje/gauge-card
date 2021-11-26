@@ -15,6 +15,7 @@ class GaugeCard extends HTMLElement {
     if (!cardConfig.scale) cardConfig.scale = "50px";
     if (!cardConfig.min) cardConfig.min = 0;
     if (!cardConfig.max) cardConfig.max = 100;
+    if (!cardConfig.needle) cardConfig.needle = false;
 
     const entityParts = this._splitEntityAndAttribute(cardConfig.entity);
     cardConfig.entity = entityParts.entity;
@@ -139,10 +140,10 @@ class GaugeCard extends HTMLElement {
   _computeSeverity(stateValue, sections) {
     let numberValue = Number(stateValue);
     const severityMap = {
-      red: "var(--label-badge-red)",
-      green: "var(--label-badge-green)",
-      amber: "var(--label-badge-yellow)",
-      normal: "var(--label-badge-blue)",
+      red: "var(--error-color)",
+      green: "var(--success-color)",
+      yellow: "var(--warning-color)",
+      normal: "var(--info-color)",
     }
     if (!sections) return severityMap["normal"];
     let sortable = [];
