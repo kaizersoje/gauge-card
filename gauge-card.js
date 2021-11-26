@@ -92,7 +92,10 @@ class GaugeCard extends HTMLElement {
         transition: all 1s ease-out;
       }
       #gauge-data-val{
-        width: calc(var(--base-unit) * 4);
+        width: calc(var(--base-unit) * 1.6);
+        line-height: calc(var(--base-unit) * 0.5);
+        margin-left: auto;
+        margin-right: auto;
       }
       .gauge-data #val{
         font-size: calc(var(--base-unit) * 0.55);
