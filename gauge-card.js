@@ -1,5 +1,5 @@
 console.info(
-    '%c GAUGE-CARD %c 0.2.1 ',
+    '%c GAUGE-CARD %c 0.2.2 ',
     'color: cyan; background: black; font-weight: bold;',
     'color: darkblue; background: white; font-weight: bold;',
 );
@@ -91,11 +91,11 @@ class GaugeCard extends HTMLElement {
         margin-right: auto;
         transition: all 1s ease-out;
       }
-      .gauge-data #percent{
+      .gauge-data #val{
         font-size: calc(var(--base-unit) * 0.55);
       }
       .gauge-data #unit{
-        font-size: calc(var(--base-unit) * 0.50);
+        font-size: calc(var(--base-unit) * 0.40);
       }
       .gauge-data #title{
         padding-top: calc(var(--base-unit) * 0.15);
@@ -107,7 +107,7 @@ class GaugeCard extends HTMLElement {
         <div class="gauge-a"></div>
         <div class="gauge-b"></div>
         <div class="gauge-c" id="gauge"></div>
-        <div class="gauge-data"><div id="percent"></div><div id="unit"></div><div id="title"></div></div>
+        <div class="gauge-data"><div id="val"></div><div id="unit"></div><div id="title"></div></div>
       </div>
     `;
     card.appendChild(content);
@@ -192,7 +192,7 @@ class GaugeCard extends HTMLElement {
 
     const root = this.shadowRoot;
     if (entityState !== this._entityState) {
-      root.getElementById("percent").textContent = `${entityState}`;
+      root.getElementById("val").textContent = `${entityState}`;
       root.getElementById("unit").textContent = ` ${measurement}`;
       root.getElementById("title").textContent = config.title;
       const turn = this._translateTurn(entityState, config) / 10;
