@@ -1,5 +1,5 @@
 console.info(
-    '%c GAUGE-CARD %c 0.2.4 ',
+    '%c GAUGE-CARD %c 0.2.5 ',
     'color: cyan; background: black; font-weight: bold;',
     'color: darkblue; background: white; font-weight: bold;',
 );
@@ -117,7 +117,8 @@ class GaugeCard extends HTMLElement {
         <div class="gauge-a"></div>
         <div class="gauge-b"></div>
         <div class="gauge-c" id="gauge"></div>
-        <div class="gauge-data"><div id="gauge-data-val"><div id="val"></div><div id="unit"></div></div><div id="title"></div></div>
+        <div class="gauge-data"><div id="gauge-data-val"><div id="val"></div><div id="unit"></div></div></div>
+        <div id="title"></div>
       </div>
     `;
     card.appendChild(content);
